@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+
+  /* CHANGE BACKGROUND IMAGE HERE */
+  background: url('https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2') no-repeat center center/cover;
+}
+
+.container {
+  width: 90%;
+  max-width: 400px;
+  margin: 80px auto;
+  text-align: center;
+  padding: 20px;
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  background: rgba(0,0,0,0.35);
+  box-shadow: 0 0 30px hotpink;
+}
+
+.screen {
+  display: none;
+}
+
+.screen.active {
+  display: block;
+}
+
+.glow {
+  color: white;
+  text-shadow: 0 0 10px hotpink, 0 0 20px violet;
+}
+
+#gif {
+  width: 250px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px cyan;
+}
+
+#questionText {
+  color: white;
+  margin-top: 15px;
+  text-shadow: 0 0 10px pink;
+}
+
+.neon-btn {
+  padding: 12px 24px;
+  margin: 10px;
+  border: none;
+  border-radius: 30px;
+  background: rgba(255,255,255,0.15);
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 0 15px hotpink;
+  transition: 0.3s;
+}
+
+.neon-btn:hover {
+  transform: scale(1.1);
+}
+
+.buttons {
+  position: relative;
+}
+
+.petals::before {
+  content: "🌸 🌸 🌸 🌸 🌸 🌸 🌸";
+  position: absolute;
+  top: -50px;
+  left: 0;
+  width: 100%;
+  font-size: 24px;
+  animation: fall 8s linear infinite;
+}
+
+@keyframes fall {
+  from {
+    transform: translateY(-50px);
+  }
+  to {
+    transform: translateY(100vh);
+  }
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For You ❤️</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<audio id="bgMusic" loop>
+  <!-- CHANGE SONG URL HERE -->
+  <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+</audio>
+
+<div class="petals"></div>
+
+<div class="container" id="mainCard">
+
+  <div id="startScreen" class="screen active">
+    <h1 class="glow">Tap to Enter ❤️</h1>
+    <button id="playBtn" class="neon-btn">▶ Play</button>
+  </div>
+
+  <div id="questionScreen" class="screen">
+    <img id="gif" src="" alt="gif">
+    <h2 id="questionText"></h2>
+
+    <div class="buttons">
+      <button id="yesBtn" class="neon-btn">Yes</button>
+      <button id="noBtn" class="neon-btn">No</button>
+    </div>
+  </div>
+
+  <div id="successScreen" class="screen">
+    <h1 class="glow">I knew your heart would say yes ❤️</h1>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
