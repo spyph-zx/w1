@@ -44,8 +44,11 @@ moveNoRandom();
 };
 
 function moveNoRandom(){
-const maxX=window.innerWidth-100;
-const maxY=window.innerHeight-70;
+const btnWidth=90;
+const btnHeight=50;
+
+const maxX=window.innerWidth-btnWidth-20;
+const maxY=window.innerHeight-btnHeight-20;
 
 const randomX=Math.random()*maxX;
 const randomY=Math.random()*maxY;
@@ -57,16 +60,16 @@ no.style.top=randomY+"px";
 
 const petalsContainer=document.getElementById("petals-container");
 
-for(let i=0;i<28;i++){
+for(let i=0;i<30;i++){
 let petal=document.createElement("img");
 
-/* REAL PETAL IMAGE */
-petal.src="https://pngimg.com/uploads/rose_petals/rose_petals_PNG6768.png";
+/* pink blossom petal */
+petal.src="https://pngimg.com/uploads/rose_petals/rose_petals_PNG6766.png";
 
 petal.classList.add("petal");
 petal.style.left=Math.random()*100+"%";
 petal.style.animationDuration=(5+Math.random()*6)+"s";
-petal.style.top=Math.random()*-800+"px";
+petal.style.top=Math.random()*-900+"px";
 
 petalsContainer.appendChild(petal);
 }
