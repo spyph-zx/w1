@@ -30,7 +30,7 @@ position:absolute;
 width:7px;
 height:16px;
 background:linear-gradient(145deg,#ffdbe6,#f5b7c8);
-border-radius:50% 50% 50% 50%;
+border-radius:50%;
 opacity:0.8;
 transform:rotate(20deg);
 animation:fall linear infinite;
@@ -69,13 +69,15 @@ cursor:pointer;
 padding:38px;
 font-size:30px;
 color:white;
-border:3px solid hotpink;
+border:3px solid #ff4d6d;
 border-radius:50%;
 box-shadow:
-0 0 15px hotpink,
-0 0 30px rgba(255,20,147,0.45);
+0 0 15px #ff4d6d,
+0 0 35px hotpink,
+0 0 60px deeppink;
 text-shadow:
-0 0 10px hotpink;
+0 0 12px hotpink,
+0 0 25px red;
 animation:pulse 1.4s infinite;
 }
 
@@ -97,8 +99,11 @@ text-align:center;
 border-radius:22px;
 background:rgba(255,255,255,0.08);
 backdrop-filter:blur(14px);
+border:2px solid rgba(255,77,109,0.7);
 box-shadow:
-0 0 18px rgba(255,105,180,0.45);
+0 0 18px #ff4d6d,
+0 0 35px hotpink,
+0 0 55px deeppink;
 z-index:5;
 }
 
@@ -107,27 +112,32 @@ width:70vw;
 max-width:230px;
 border-radius:18px;
 box-shadow:
-0 0 15px rgba(255,105,180,0.35);
+0 0 15px hotpink,
+0 0 30px deeppink;
 }
 
 #question{
 font-size:24px;
 color:white;
 text-shadow:
-0 0 10px rgba(255,105,180,0.55);
+0 0 10px #ff4d6d,
+0 0 22px hotpink,
+0 0 35px deeppink;
 margin-top:12px;
 }
 
 button{
 padding:10px 22px;
 margin:10px;
-border:none;
+border:2px solid rgba(255,77,109,0.75);
 border-radius:24px;
 font-size:17px;
 color:white;
-background:rgba(255,255,255,0.14);
+background:rgba(255,255,255,0.12);
 box-shadow:
-0 0 12px rgba(255,105,180,0.4);
+0 0 12px #ff4d6d,
+0 0 25px hotpink,
+0 0 40px deeppink;
 cursor:pointer;
 transition:0.3s;
 }
@@ -150,7 +160,9 @@ text-align:center;
 color:white;
 font-size:24px;
 text-shadow:
-0 0 12px rgba(255,105,180,0.45);
+0 0 15px #ff4d6d,
+0 0 30px hotpink,
+0 0 45px deeppink;
 }
 
 #musicBtn{
@@ -160,9 +172,10 @@ right:20px;
 z-index:6;
 font-size:24px;
 padding:12px;
-border:none;
+border:2px solid rgba(255,77,109,0.75);
 border-radius:50%;
-background:rgba(255,255,255,0.14);
+background:rgba(255,255,255,0.12);
 box-shadow:
-0 0 12px rgba(255,105,180,0.4);
+0 0 12px #ff4d6d,
+0 0 25px hotpink;
 }
