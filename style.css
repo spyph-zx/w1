@@ -3,8 +3,6 @@ margin:0;
 overflow:hidden;
 font-family:cursive;
 height:100vh;
-
-/* CHANGE BACKGROUND */
 background:url('YOUR_BACKGROUND_URL') center/cover no-repeat;
 }
 
@@ -12,7 +10,7 @@ background:url('YOUR_BACKGROUND_URL') center/cover no-repeat;
 position:absolute;
 width:100%;
 height:100%;
-background:rgba(0,0,0,0.45);
+background:rgba(0,0,0,0.55);
 z-index:1;
 }
 
@@ -26,18 +24,14 @@ overflow:hidden;
 
 .petal{
 position:absolute;
-width:18px;
+width:20px;
 animation:fall linear infinite;
 opacity:0.8;
 }
 
 @keyframes fall{
-0%{
-transform:translateY(-50px) rotate(0deg);
-}
-100%{
-transform:translateY(100vh) rotate(360deg);
-}
+0%{transform:translateY(-50px) rotate(0deg);}
+100%{transform:translateY(100vh) rotate(360deg);}
 }
 
 .photos{
@@ -48,18 +42,21 @@ z-index:3;
 }
 
 .photos img{
-width:90px;
-height:120px;
+width:95px;
+height:125px;
 position:absolute;
-border-radius:15px;
-box-shadow:0 0 15px hotpink;
+border-radius:18px;
+box-shadow:
+0 0 10px hotpink,
+0 0 20px deeppink,
+0 0 35px violet;
 object-fit:cover;
 }
 
-.photos img:nth-child(1){top:10%;left:5%;}
-.photos img:nth-child(2){top:10%;right:5%;}
-.photos img:nth-child(3){bottom:20%;left:5%;}
-.photos img:nth-child(4){bottom:20%;right:5%;}
+.photos img:nth-child(1){top:8%;left:5%;}
+.photos img:nth-child(2){top:8%;right:5%;}
+.photos img:nth-child(3){bottom:18%;left:5%;}
+.photos img:nth-child(4){bottom:18%;right:5%;}
 
 .center-heart{
 position:absolute;
@@ -71,58 +68,82 @@ cursor:pointer;
 }
 
 .heart{
-padding:40px;
-font-size:35px;
+padding:45px;
+font-size:38px;
 color:white;
 border:4px solid hotpink;
 border-radius:50%;
-box-shadow:0 0 25px hotpink;
-animation:pulse 1.5s infinite;
-text-shadow:0 0 15px hotpink;
+box-shadow:
+0 0 15px hotpink,
+0 0 30px deeppink,
+0 0 50px violet;
+text-shadow:
+0 0 10px hotpink,
+0 0 25px deeppink;
+animation:pulse 1.4s infinite;
 }
 
 @keyframes pulse{
-50%{
-transform:scale(1.1);
-}
+50%{transform:scale(1.12);}
 }
 
-#questionBox{
+#questionCard{
 position:absolute;
 top:50%;
 left:50%;
 transform:translate(-50%,-50%);
-text-align:center;
 z-index:5;
+text-align:center;
+padding:20px;
+width:85%;
+max-width:340px;
+border-radius:25px;
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(15px);
+box-shadow:
+0 0 15px hotpink,
+0 0 30px violet;
+animation:fadeIn 0.8s;
+}
+
+@keyframes fadeIn{
+from{opacity:0;transform:translate(-50%,-45%);}
+to{opacity:1;transform:translate(-50%,-50%);}
 }
 
 #gif{
-width:220px;
+width:230px;
 border-radius:20px;
-box-shadow:0 0 20px cyan;
+box-shadow:
+0 0 15px cyan,
+0 0 30px violet;
 }
 
 #question{
 color:white;
-text-shadow:0 0 15px hotpink;
-margin-top:15px;
+font-size:26px;
+text-shadow:
+0 0 10px hotpink,
+0 0 20px violet;
 }
 
 button{
-padding:12px 24px;
-margin:10px;
+padding:12px 26px;
+margin:12px;
 border:none;
-border-radius:25px;
-background:rgba(255,255,255,0.15);
-color:white;
+border-radius:28px;
 font-size:18px;
-box-shadow:0 0 15px hotpink;
+color:white;
+background:rgba(255,255,255,0.12);
+box-shadow:
+0 0 10px hotpink,
+0 0 25px deeppink;
 cursor:pointer;
 transition:0.3s;
 }
 
 button:hover{
-transform:scale(1.1);
+transform:scale(1.12);
 }
 
 .hidden{
@@ -135,21 +156,25 @@ top:50%;
 left:50%;
 transform:translate(-50%,-50%);
 z-index:5;
+font-size:28px;
 color:white;
-text-shadow:0 0 20px hotpink;
-font-size:24px;
 text-align:center;
+text-shadow:
+0 0 15px hotpink,
+0 0 35px violet;
 }
 
 #musicBtn{
 position:absolute;
 bottom:20px;
 right:20px;
-z-index:5;
-font-size:25px;
+z-index:6;
+font-size:26px;
+padding:14px;
 border:none;
 border-radius:50%;
-padding:15px;
-box-shadow:0 0 20px hotpink;
-background:rgba(255,255,255,0.1);
+background:rgba(255,255,255,0.12);
+box-shadow:
+0 0 15px hotpink,
+0 0 30px violet;
 }
