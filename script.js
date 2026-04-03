@@ -119,3 +119,38 @@ function moveNoButton() {
   no.style.left = newX + "px";
   no.style.top = newY + "px";
 }
+
+function moveNoButton() {
+  const rect = no.getBoundingClientRect();
+
+  const btnWidth = rect.width;
+  const btnHeight = rect.height;
+
+  const margin = 20;
+
+  const minX = margin;
+  const minY = margin;
+
+  const maxX = window.innerWidth - btnWidth - margin;
+  const maxY = window.innerHeight - btnHeight - margin;
+
+  let newX, newY, distance;
+
+  do {
+    newX = Math.random() * (maxX - minX) + minX;
+    newY = Math.random() * (maxY - minY) + minY;
+
+    distance = Math.sqrt(
+      Math.pow(newX - lastX, 2) +
+      Math.pow(newY - lastY, 2)
+    );
+
+  } while (distance < 120);
+
+  lastX = newX;
+  lastY = newY;
+
+  no.style.position = "fixed";
+  no.style.left = `${newX}px`;
+  no.style.top = `${newY}px`;
+}
