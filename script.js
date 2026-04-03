@@ -38,7 +38,6 @@ no.onclick=()=>{
 if(step<4){
 step++;
 loadScene();
-
 if(step===4){
 startMovingNo();
 }
@@ -68,7 +67,6 @@ for(let i=0;i<35;i++){
 let petal=document.createElement("div");
 
 petal.classList.add("petal");
-
 petal.style.left=Math.random()*100+"%";
 petal.style.animationDuration=(5+Math.random()*6)+"s";
 petal.style.top=Math.random()*-800+"px";
