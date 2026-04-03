@@ -63,13 +63,13 @@ no.style.top=randomY+"px";
 
 const petalsContainer=document.getElementById("petals-container");
 
-for(let i=0;i<30;i++){
-let blossom=document.createElement("div");
+for(let i=0;i<35;i++){
+let petal=document.createElement("div");
 
-blossom.classList.add("blossom");
-blossom.style.left=Math.random()*100+"%";
-blossom.style.animationDuration=(5+Math.random()*6)+"s";
-blossom.style.top=Math.random()*-800+"px";
+petal.classList.add("petal");
+petal.style.left=Math.random()*100+"%";
+petal.style.animationDuration=(5+Math.random()*6)+"s";
+petal.style.top=Math.random()*-800+"px";
 
-petalsContainer.appendChild(blossom);
+petalsContainer.appendChild(petal);
 }
