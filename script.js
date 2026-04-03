@@ -10,21 +10,16 @@ const music=document.getElementById("bgMusic");
 let step=0;
 
 const scenes=[
-{gif:"GIF1_URL",text:"Do you love me? ❤️"},
-{gif:"GIF2_URL",text:"Think again wisely 🥺"},
-{gif:"GIF3_URL",text:"Are you really sure? 💔"},
-{gif:"GIF4_URL",text:"Last chance ❤️"},
-{gif:"GIF5_URL",text:"No escape now 😌"}
+{gif:"gif1.gif",text:"Do you love me? ❤️"},
+{gif:"gif2.gif",text:"Think again wisely 🥺"},
+{gif:"gif3.gif",text:"Are you really sure? 💔"},
+{gif:"gif4.gif",text:"Last chance ❤️"},
+{gif:"gif5.gif",text:"No escape now 😌"}
 ];
 
 function loadScene(){
-questionCard.style.opacity="0";
-
-setTimeout(()=>{
 gif.src=scenes[step].gif;
 question.innerText=scenes[step].text;
-questionCard.style.opacity="1";
-},300);
 }
 
 intro.onclick=()=>{
@@ -49,8 +44,8 @@ moveNoRandom();
 };
 
 function moveNoRandom(){
-const maxX=window.innerWidth-120;
-const maxY=window.innerHeight-80;
+const maxX=window.innerWidth-100;
+const maxY=window.innerHeight-70;
 
 const randomX=Math.random()*maxX;
 const randomY=Math.random()*maxY;
@@ -62,12 +57,16 @@ no.style.top=randomY+"px";
 
 const petalsContainer=document.getElementById("petals-container");
 
-for(let i=0;i<25;i++){
+for(let i=0;i<28;i++){
 let petal=document.createElement("img");
+
+/* REAL PETAL IMAGE */
 petal.src="https://pngimg.com/uploads/rose_petals/rose_petals_PNG6768.png";
+
 petal.classList.add("petal");
 petal.style.left=Math.random()*100+"%";
-petal.style.animationDuration=(4+Math.random()*6)+"s";
-petal.style.top=Math.random()*-600+"px";
+petal.style.animationDuration=(5+Math.random()*6)+"s";
+petal.style.top=Math.random()*-800+"px";
+
 petalsContainer.appendChild(petal);
 }
