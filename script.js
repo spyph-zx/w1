@@ -1,4 +1,3 @@
-
 const intro = document.getElementById("intro");
 const questionCard = document.getElementById("questionCard");
 const gif = document.getElementById("gif");
@@ -9,7 +8,6 @@ const success = document.getElementById("success");
 const music = document.getElementById("bgMusic");
 
 let step = 0;
-
 let lastX = 100;
 let lastY = 100;
 
@@ -48,79 +46,6 @@ no.onclick = () => {
 };
 
 function moveNoButton() {
-  const btnWidth = 90;
-  const btnHeight = 50;
-
-  const maxX = window.innerWidth - btnWidth - 20;
-  const maxY = window.innerHeight - btnHeight - 20;
-
-  let newX, newY, distance;
-
-  do {
-    newX = Math.random() * maxX;
-    newY = Math.random() * maxY;
-
-    distance = Math.sqrt(
-      Math.pow(newX - lastX, 2) +
-      Math.pow(newY - lastY, 2)
-    );
-
-  } while (distance < 120);
-
-  lastX = newX;
-  lastY = newY;
-
-  no.style.position = "fixed";
-  no.style.left = newX + "px";
-  no.style.top = newY + "px";
-}
-
-const petalsContainer = document.getElementById("petals-container");
-
-for (let i = 0; i < 40; i++) {
-  let petal = document.createElement("div");
-
-  petal.classList.add("petal");
-  petal.style.left = Math.random() * 100 + "%";
-  petal.style.animationDuration = (5 + Math.random() * 6) + "s";
-  petal.style.top = Math.random() * -800 + "px";
-
-  petalsContainer.appendChild(petal);
-}
-
-function moveNoButton() {
-  const rect = no.getBoundingClientRect();
-
-  const btnWidth = rect.width;
-  const btnHeight = rect.height;
-
-  const padding = 12;
-
-  const maxX = window.innerWidth - btnWidth - padding;
-  const maxY = window.innerHeight - btnHeight - padding;
-
-  let newX, newY, distance;
-
-  do {
-    newX = Math.random() * maxX;
-    newY = Math.random() * maxY;
-
-    distance = Math.sqrt(
-      Math.pow(newX - lastX, 2) +
-      Math.pow(newY - lastY, 2)
-    );
-
-  } while (distance < 120);
-
-  lastX = newX;
-  lastY = newY;
-
-  no.style.position = "fixed";
-  no.style.left = newX + "px";
-  no.style.top = newY + "px";
-}
-
-function moveNoButton() {
   const rect = no.getBoundingClientRect();
 
   const btnWidth = rect.width;
@@ -153,4 +78,17 @@ function moveNoButton() {
   no.style.position = "fixed";
   no.style.left = `${newX}px`;
   no.style.top = `${newY}px`;
+}
+
+const petalsContainer = document.getElementById("petals-container");
+
+for (let i = 0; i < 55; i++) {
+  let petal = document.createElement("div");
+
+  petal.classList.add("petal");
+  petal.style.left = Math.random() * 100 + "%";
+  petal.style.animationDuration = (5 + Math.random() * 6) + "s";
+  petal.style.top = Math.random() * -800 + "px";
+
+  petalsContainer.appendChild(petal);
 }
