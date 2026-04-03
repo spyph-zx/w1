@@ -9,6 +9,9 @@ const music=document.getElementById("bgMusic");
 
 let step=0;
 
+let lastX=100;
+let lastY=100;
+
 const scenes=[
 {gif:"gif1.gif",text:"Do you love me? ❤️"},
 {gif:"gif2.gif",text:"Think again wisely 🥺"},
@@ -38,32 +41,43 @@ no.onclick=()=>{
 if(step<4){
 step++;
 loadScene();
-if(step===4){
-startMovingNo();
 }
-}
+
+moveNoButton();
 };
 
-function startMovingNo(){
-setInterval(()=>{
+function moveNoButton(){
+
 const btnWidth=90;
 const btnHeight=50;
 
 const maxX=window.innerWidth-btnWidth-20;
 const maxY=window.innerHeight-btnHeight-20;
 
-const randomX=Math.random()*maxX;
-const randomY=Math.random()*maxY;
+let newX,newY;
+let distance;
+
+do{
+newX=Math.random()*maxX;
+newY=Math.random()*maxY;
+
+distance=Math.sqrt(
+Math.pow(newX-lastX,2)+Math.pow(newY-lastY,2)
+);
+
+}while(distance<120);
+
+lastX=newX;
+lastY=newY;
 
 no.style.position="fixed";
-no.style.left=randomX+"px";
-no.style.top=randomY+"px";
-},900);
+no.style.left=newX+"px";
+no.style.top=newY+"px";
 }
 
 const petalsContainer=document.getElementById("petals-container");
 
-for(let i=0;i<35;i++){
+for(let i=0;i<40;i++){
 let petal=document.createElement("div");
 
 petal.classList.add("petal");
