@@ -1,90 +1,73 @@
 const intro=document.getElementById("intro");
-const questionBox=document.getElementById("questionBox");
+const questionCard=document.getElementById("questionCard");
 const gif=document.getElementById("gif");
 const question=document.getElementById("question");
 const yes=document.getElementById("yes");
 const no=document.getElementById("no");
 const success=document.getElementById("success");
 const music=document.getElementById("bgMusic");
-const musicBtn=document.getElementById("musicBtn");
 
 let step=0;
 
-const data=[
-{
-gif:"GIF1_URL",
-text:"Do you love me? ❤️"
-},
-{
-gif:"GIF2_URL",
-text:"Think again wisely 🥺"
-},
-{
-gif:"GIF3_URL",
-text:"Are you really sure? 💔"
-},
-{
-gif:"GIF4_URL",
-text:"Last chance ❤️"
-},
-{
-gif:"GIF5_URL",
-text:"No escape now 😌"
-}
+const scenes=[
+{gif:"GIF1_URL",text:"Do you love me? ❤️"},
+{gif:"GIF2_URL",text:"Think again wisely 🥺"},
+{gif:"GIF3_URL",text:"Are you really sure? 💔"},
+{gif:"GIF4_URL",text:"Last chance ❤️"},
+{gif:"GIF5_URL",text:"No escape now 😌"}
 ];
 
-function loadQuestion(){
-gif.src=data[step].gif;
-question.innerText=data[step].text;
+function loadScene(){
+questionCard.style.opacity="0";
+
+setTimeout(()=>{
+gif.src=scenes[step].gif;
+question.innerText=scenes[step].text;
+questionCard.style.opacity="1";
+},300);
 }
 
 intro.onclick=()=>{
 music.play();
 intro.style.display="none";
-questionBox.classList.remove("hidden");
-loadQuestion();
+questionCard.classList.remove("hidden");
+loadScene();
 };
 
 yes.onclick=()=>{
-questionBox.classList.add("hidden");
+questionCard.classList.add("hidden");
 success.classList.remove("hidden");
 };
 
 no.onclick=()=>{
 if(step<4){
 step++;
-loadQuestion();
+loadScene();
 }else{
-moveNo();
+moveNoRandom();
 }
 };
 
-function moveNo(){
-let x=Math.random()*200-100;
-let y=Math.random()*100-50;
-no.style.transform=`translate(${x}px,${y}px)`;
-}
+function moveNoRandom(){
+const maxX=window.innerWidth-120;
+const maxY=window.innerHeight-80;
 
-musicBtn.onclick=()=>{
-if(music.paused){
-music.play();
-}else{
-music.pause();
+const randomX=Math.random()*maxX;
+const randomY=Math.random()*maxY;
+
+no.style.position="fixed";
+no.style.left=randomX+"px";
+no.style.top=randomY+"px";
 }
-};
 
 const petalsContainer=document.getElementById("petals-container");
 
-for(let i=0;i<20;i++){
+for(let i=0;i<25;i++){
 let petal=document.createElement("img");
-
-/* CHANGE PETAL PNG HERE */
 petal.src="https://pngimg.com/uploads/rose_petals/rose_petals_PNG6768.png";
-
 petal.classList.add("petal");
 petal.style.left=Math.random()*100+"%";
-petal.style.animationDuration=(5+Math.random()*5)+"s";
-petal.style.top=Math.random()*-500+"px";
-
+petal.style.animationDuration=(4+Math.random()*6)+"s";
+petal.style.top=Math.random()*-600+"px";
 petalsContainer.appendChild(petal);
 }
